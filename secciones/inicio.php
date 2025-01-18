@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
 
     <!-- hoja de estilos -->
@@ -10,7 +7,7 @@
 
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container-fluid text-center mt-3">
         <div class="row align-items-center">
             <div class="col">
                 <h1>E PLVRIBVS VNVM</h1>
@@ -19,6 +16,14 @@
         <div class="row align-items-center">
             <div class="col">
                 <h4>FUNDACÓN ADRIÁN PARRA</h4>
+            </div>
+        </div>
+        <div class="row align-items-center mt-5">
+            <div class="col">
+                <img class="img-fluid" src="/src/imagenes/squat.webp" alt="niveles-squat">
+            </div>
+            <div class="col">
+                <p>Coming soon!</p>
             </div>
         </div>
     </div>

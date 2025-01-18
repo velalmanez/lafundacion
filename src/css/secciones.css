@@ -1,8 +1,49 @@
+@media screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .navbar img {
+      max-height: 50px;
+  }
+}
+
 body{
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.979);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-max-width: 100%; /* Compatibilidad con Safari */
+  -webkit-height: auto;    /* Compatibilidad con Safari */
+}
+
+
+iframe {
+    height: 50vh; /* Ajusta la altura del mapa */
+    width: 100%;
+}
+
+.card{
+  background-color: rgb(41, 40, 40);
+  border-radius: 5%;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.card:hover{
+  background-color: rgb(78, 78, 78);
+  transform: scale(1.05);
+}
+
+
+.card-body{
+  color: white;
 }
