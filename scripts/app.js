@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Cargar la página inicial
-    cargarContenido('/secciones/inicio.php');
+    cargarContenido('secciones/inicio.php');
 
     // Delegar eventos a los enlaces del menú
     document.querySelectorAll('.section-link').forEach((enlace) => {
@@ -40,7 +40,7 @@ function onChangeSection (page_name){
 
 function cargarScripts(){
     const script = document.createElement('script');
-    script.src = `/scripts/contacto.js`;
+    script.src = 'scripts/contacto.js';
     script.async = true; // Opcional: carga el script de manera asíncrona
     document.body.appendChild(script);
 }

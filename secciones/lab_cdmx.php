@@ -5,7 +5,7 @@
     <title>Contacto</title>
 
     <!-- hoja de estilos -->
-    <link rel="stylesheet" href="/src/css/secciones.css">
+    <link rel="stylesheet" href="src/css/secciones.css">
 
     <!-- API mapas -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

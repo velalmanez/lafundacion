@@ -6,7 +6,7 @@
     <title>Inicio</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="/src/imagenes/logo_fundacion_black.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="src/img/logo_fundacion_white.webp" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <!-- hoja de estilos -->
-    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
     <div class="content container-fliud">
         <!-- barra de navegacion -->
         <?php 
-            include './componentes/navbar.php'
+            include 'componentes/navbar.php'
         ?>
 
         <!-- contenedor central -->
@@ -38,7 +38,7 @@
 
         <!-- pie de pagina -->
         <?php
-            include './componentes/footer.php'
+            include 'componentes/footer.php'
         ?>
 
         </div>
@@ -47,7 +47,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
      
      <!-- js principal de la app -->
-     <script src="/scripts/app.js"></script>
+     <script src="scripts/app.js"></script>
 </body>
 </html>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <!-- hoja de estilos -->
-    <link rel="stylesheet" href="/src/css/secciones.css">
+    <link rel="stylesheet" href="src/css/secciones.css">
 </head>
 <body>
     <div class="container-fuid">

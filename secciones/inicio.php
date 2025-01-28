@@ -3,7 +3,7 @@
     <title>Inicio</title>
 
     <!-- hoja de estilos -->
-     <link rel="stylesheet" href="/src/css/secciones.css">
+     <link rel="stylesheet" href="src/css/secciones.css">
 
 </head>
 <body>
@@ -20,7 +20,7 @@
         </div>
         <div class="row align-items-center mt-5">
             <div class="col">
-                <img class="img-fluid" src="/src/imagenes/squat.webp" alt="niveles-squat">
+                <img class="img-fluid" src="src/img/squat.webp" alt="niveles-squat">
             </div>
             <div class="col">
                 <p>Coming soon!</p>

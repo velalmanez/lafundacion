@@ -3,7 +3,7 @@
     <title>Inicio</title>
 
     <!-- hoja de estilos -->
-     <link rel="stylesheet" href="/src/css/secciones.css">
+     <link rel="stylesheet" href="src/css/secciones.css">
 
 </head>
 <body>
