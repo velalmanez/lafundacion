@@ -1,10 +1,13 @@
 <?php
-   $config = require '../config/mailConfig.php';  
-
    require '../vendor/autoload.php'; // Autoload de PHPMailer
 
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
+   use Dotenv\Dotenv;
+   
+   // Carga las variables de entorno
+    $dotenv = Dotenv::createImmutable(__DIR__ . '../.env');
+    $dotenv->load();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -25,16 +28,16 @@
             // Configuración del servidor
             $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Comenta esto en producción
             $mail->isSMTP();
-            $mail->Host = $config['smtp_host']; 
+            $mail->Host = $_ENV['SMP_HOST']; 
             $mail->SMTPAuth = true;
-            $mail->Username = $config['smtp_user'];
-            $mail->Password = $config['smtp_pass'];
-            $mail->SMTPSecure = $config['smtp_port'];
-            $mail->Port = 465;
+            $mail->Username = $_ENV['SMTP_USERNAME'];
+            $mail->Password = $_ENV['SMTP_PASSWORD'];
+            $mail->SMTPSecure = ;
+            $mail->Port = $_ENV['SMP_PORT'];
 
             // Configuración del correo
             $mail->setFrom($remitente, $nombre . ' ' . $apellido);
-            $mail->addAddress('ivanvelazquez@epluribusunvm.com', 'Ivan Velazquez');
+            $mail->addAddress($_ENV['FOR_EMAIL'], 'Ivan Velazquez');
             $mail->isHTML(false);
             $mail->Subject = "Nuevo mensaje de la web, del contacto: $nombre $apellido";
             $mail->Body = "Nombre: $nombre\n" .
