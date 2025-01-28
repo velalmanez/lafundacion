@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then((html) => {
                 contenido.innerHTML = html; // Inserta el contenido dinámico
+
+                 // Verifica si la sección cargada es la sección de contacto
+                 if (pagina.includes('contacto')) {
+                    cargarScripts();
+                }
             })
             .catch((error) => {
                 contenido.innerHTML = `<p>Error al cargar la página: ${error.message}</p>`;
@@ -31,4 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function onChangeSection (page_name){
     event.preventDefault();
     document.title = page_name;
+}
+
+function cargarScripts(){
+    const script = document.createElement('script');
+    script.src = `/scripts/contacto.js`;
+    script.async = true; // Opcional: carga el script de manera asíncrona
+    document.body.appendChild(script);
 }

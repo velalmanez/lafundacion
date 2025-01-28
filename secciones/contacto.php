@@ -1,8 +1,9 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-
     <!-- hoja de estilos -->
     <link rel="stylesheet" href="/src/css/secciones.css">
 </head>
@@ -13,44 +14,34 @@
                 <h1>¡CONTACTANOS!</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-items-center">
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="remitente" class="form-label">Tu correo:</label>
+                    <input type="email" class="form-control" id="remitente" name="remitente" required>
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre(s):</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellido" class="form-label">Primer Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje:</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" id="submitFormEmail" class="btn btn-success w-100">Enviar</button>
+                </div>                
+            </form>
 
-        <?php
-            // se usa el requiere para si psi se necesita el archivo conexion
-            require "../config/conexion.php";
-            mysqli_set_charset($conexion,'utf8');
-
-            //genear el query
-            $consulta_sql="SELECT nombre, email FROM sis_atletas";
-
-            //mandar el query por medio de la conexion y almacenaremos el resultado en una variable
-            $resultado = $conexion->query($consulta_sql);
-
-            // Retorna el numero de filas del resultado. Si encuentra mas de uno lo usamos para imprimir el resultado en nuestra tabla
-            $count = mysqli_num_rows($resultado); 
-            if ( $count>0 ){
-                //aqui se pintarian los registro de la DB
-                while( $row = mysqli_fetch_assoc($resultado)  ){
-                    
-                 echo " <div class='col-12 col-sm-6 col-md-4 d-flex justify-content-center w-40'>";
-                    echo " <div class='card mt-3' style='width: 25rem;'>";
-                        echo"<img src='/src/imagenes/logo_fundacion_black.webp' class='car-img-top img-fluid w-70 h-70' alt='...'>";
-                        echo"<div class='card-body text-center'>";
-                            echo" <p class='card-title'>". $row['nombre'] ."</p>";
-                            echo"<p class='card-text'>". $row['email'] ."</p>";
-                        echo"</div>";
-                        echo"<div class='card-body d-flex justify-content-center'>";
-                            echo"<a href='#' class='btn btn-success mt-3'><i class='bi bi-envelope'></i>  Enviar Correo</a>";
-                        echo"</div>";
-                    echo "</div>"; 
-                echo "</div>"; 
-                }
-            }
-            else
-            {  
-                echo"<h1>SIN NINGUN REGISTRO</h1>";
-            }
-            ?>
+            <p id="responseMessage" style="display: none;"></p>
         </div>
     </div>
+
 </body>
+</html>
