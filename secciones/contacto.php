@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <form id="contactForm">
+            <form id="contactForm" action="helpers/envioCorreo.php" method="POST">
                 <div class="mb-3">
                     <label for="remitente" class="form-label">Tu correo:</label>
                     <input type="email" class="form-control" id="remitente" name="remitente" required>
@@ -35,11 +35,16 @@
                     <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" id="submitFormEmail" class="btn btn-success w-100">Enviar</button>
+                    <button type="submit" class="btn btn-success w-100">Enviar</button>
                 </div>                
             </form>
 
-            <p id="responseMessage" style="display: none;"></p>
+                <!-- Mensaje de respuesta -->
+                <?php if (isset($_GET['success']) && $_GET['success'] == "true"): ?>
+                    <p class="text-success text-center">Correo enviado con éxito.</p>
+                <?php elseif (isset($_GET['success']) && $_GET['success'] == "false"): ?>
+                    <p class="text-danger text-center">Error al enviar el correo.</p>
+                <?php endif; ?>
         </div>
     </div>
 
