@@ -10,7 +10,7 @@ let formEmail= document.getElementById('contactForm');
     
             try {
                 // Enviar los datos al servidor
-                const response = await fetch('/helpers/envioCorreo.php', {
+                const response = await fetch('helpers/envioCorreo.php', {
                     method: 'POST',
                     body: formData,
                 });
@@ -28,6 +28,7 @@ let formEmail= document.getElementById('contactForm');
                     responseMessage.style.color = 'red';
                 }
             } catch (error) {
+                alert(error);
                 responseMessage.style.display = 'block';
                 responseMessage.textContent = 'Ocurrió un error al enviar el correo.';
                 responseMessage.style.color = 'red';
