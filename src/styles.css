@@ -30,16 +30,6 @@ iframe {
   padding: 1rem 0;
 }
 
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background-image: url('/img/logo_fundacion_white.webp');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.06;
-  z-index: -1;
-}
-
 .card {
   background-color: rgb(41, 40, 40);
   border-radius: 1rem;
