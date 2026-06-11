@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './lab-cdmx.html',
   styleUrl: './lab-cdmx.css',
 })
-export class LabCdmxComponent {
+export class LabCdmx {
 
 }

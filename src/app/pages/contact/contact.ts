@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-contact',
   imports: [],
   templateUrl: './contact.html',
-  styleUrls: ['./contact.css'],
+  styleUrl: './contact.css',
 })
-export class ContactComponent {
+export class Contact {
   private readonly FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/lafundacion@epluribusunvm.com';
 
   message = '';

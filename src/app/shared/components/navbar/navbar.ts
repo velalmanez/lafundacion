@@ -13,7 +13,7 @@ export interface NavbarItem {
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css'],
 })
-export class NavbarComponent {
+export class Navbar {
   navbarItems: NavbarItem[] = [
     { label: 'Inicio', route: '/home' },
     { label: 'Conócenos', route: '/about' },
