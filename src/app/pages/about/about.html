@@ -2,7 +2,121 @@
   <div class="row align-items-center">
     <div class="col">
       <h1>CONOCE A NUESTRO EQUIPO</h1>
-      <p class="lead text-white mt-4">Somos la Fundación Adrián Parra y trabajamos para transformar vidas con proyectos sociales y de salud.</p>
+      <p class="lead text-white mt-4">
+        Somos la Fundación Adrián Parra y trabajamos para transformar vidas
+        con proyectos sociales y de salud.
+      </p>
     </div>
   </div>
 </section>
+
+@for (section of teamSections; track section.title) {
+
+  <section class="container py-5">
+
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="text-withe">{{ section.title }}</h2>
+        <hr class="w-25 mx-auto">
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      @for (member of section.members; track member.name) {
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+          <div
+            class="card h-100 shadow-sm cursor-pointer"
+            (click)="openMemberModal(member)"
+            data-bs-toggle="modal"
+            data-bs-target="#memberModal">
+
+            <div class="card-body text-center">
+
+              <h5 class="card-title text-withe">
+                {{ member.name }}
+              </h5>
+
+              <p class="card-text text-white">
+                {{ member.role }}
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </section>
+
+}
+
+<div
+  class="modal fade"
+  id="memberModal"
+  tabindex="-1"
+  aria-labelledby="memberModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content bg-dark text-white">
+
+      <div class="modal-header border-secondary">
+
+        <h5
+          class="modal-title"
+          id="memberModalLabel">
+
+          {{ selectedMember?.name }}
+
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal">
+        </button> 
+
+      </div>
+
+      <div class="modal-body">
+
+        @if (selectedMember?.photo) {
+          <div class="text-center mb-3">
+            <img
+              [src]="selectedMember?.photo"
+              [alt]="selectedMember?.name"
+              class="img-fluid rounded"
+              style="max-height: 250px;">
+          </div>
+        }
+
+        <h6 class="text-secondary">
+          {{ selectedMember?.role }}
+        </h6>
+
+        <p>
+          {{ selectedMember?.description }}
+        </p>
+
+      </div>
+
+      <div class="modal-footer border-secondary">
+
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
