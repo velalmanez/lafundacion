@@ -11,50 +11,88 @@
 </section>
 
 @for (section of teamSections; track section.title) {
-
   <section class="container py-5">
-
     <div class="row mb-4">
       <div class="col text-center">
-        <h2 class="text-withe">{{ section.title }}</h2>
+        <h2 class="text-white">{{ section.title }}</h2>
         <hr class="w-25 mx-auto">
       </div>
     </div>
 
-    <div class="row g-4 justify-content-center">
-
-      @for (member of section.members; track member.name) {
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-
-          <div
-            class="card h-100 shadow-sm cursor-pointer"
-            (click)="openMemberModal(member)"
-            data-bs-toggle="modal"
-            data-bs-target="#memberModal">
-
-            <div class="card-body text-center">
-
-              <h5 class="card-title text-withe">
-                {{ member.name }}
-              </h5>
-
-              <p class="card-text text-white">
-                {{ member.role }}
-              </p>
-
+    <!-- Pirámide para Mesa Directiva -->
+     @if (section.title === 'MESA DIRECTIVA DE LA FUNDACIÓN') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getTop(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
             </div>
-
-          </div>
-
+          }
         </div>
 
-      }
+        <div class="pyramid-row pyramid-vice">
+          @for (m of getVice(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
 
-    </div>
+        <div class="pyramid-row pyramid-treasurers">
+          @for (m of getTreasurers(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
 
+        <div class="pyramid-row pyramid-secretaries">
+          @for (m of getSecretaries(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+    
+
+    <!-- Otras secciones en forma de grid -->
+     @if (section.title !== 'MESA DIRECTIVA DE LA FUNDACIÓN') {
+      <div class="row g-4 justify-content-center">
+          @for (member of section.members; track member.name) {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card h-100 shadow-sm cursor-pointer" (click)="openMemberModal(member)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-white">{{ member.name }}</h5>
+                  <p class="card-text text-white">{{ member.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+      </div>
+     }
   </section>
-
 }
 
 <div
