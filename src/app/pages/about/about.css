@@ -19,6 +19,7 @@
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 .pyramid-top .pyramid-cell { flex: 0 0 30%; max-width: 15rem; }
 .pyramid-vice .pyramid-cell { flex: 0 0 25%; max-width: 18rem; }

@@ -75,23 +75,63 @@
         </div>
       </div>
      }
-    
 
-    <!-- Otras secciones en forma de grid -->
-     @if (section.title !== 'MESA DIRECTIVA DE LA FUNDACIÓN') {
-      <div class="row g-4 justify-content-center">
-          @for (member of section.members; track member.name) {
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="card h-100 shadow-sm cursor-pointer" (click)="openMemberModal(member)" data-bs-toggle="modal" data-bs-target="#memberModal">
-                <div class="card-body text-center">
-                  <h5 class="card-title text-white">{{ member.name }}</h5>
-                  <p class="card-text text-white">{{ member.role }}</p>
+     <!-- Pirámide para Dirección y Coordinación -->
+     @if (section.title === 'DIRECCIÓN Y COORDINACIÓN GENERAL DEL LABORATORIO DE LA FUNDACIÓN') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getTopDir(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
                 </div>
               </div>
             </div>
           }
+        </div>
       </div>
      }
+
+     <!-- Pirámide para Dirección General -->
+     @if (section.title === 'COORDINACIÓN GENERAL') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getCoordinationGeneral(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+
+      <!-- Pirámide para Subcoordinación -->
+     @if (section.title === 'SUBCOORDINADORES') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getSubCoordination(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+    
+
+   
   </section>
 }
 

@@ -34,7 +34,7 @@ export class About{
         },
         {
           name: 'CARMEN PARRA',
-          role: 'Tesorero',
+          role: 'Tesorera',
           photo: '',
           description:''
         },
@@ -46,28 +46,49 @@ export class About{
     {
       title: 'DIRECCIÓN Y COORDINACIÓN GENERAL DEL LABORATORIO DE LA FUNDACIÓN',
       members: [
-        { name: 'Rahmar Villegas', role: 'Director General', photo: 'assets/team/rahmar.jpg' },
-        { name: 'Ximena Ortiz', role: 'Coordinadora General', photo: 'assets/team/ximena.jpg' }
+        { name: 'PATRICIA SILVA', role: 'Director General', photo: '' },
+        { name: 'IVÁN VELÁZQUEZ', role: 'Director General', photo: '' }
       ]
     },
     {
-      title: 'Subcoordinadores',
+      title: 'DIRECCIÓN GENERAL',
+      members: []
+    },
+    {
+      title: 'COORDINACIÓN GENERAL',
       members: [
-        { name: 'Patricia Silva', role: 'Subcoordinadora', photo: 'assets/team/patricia.jpg' },
-        { name: 'Sebastián Soto', role: 'Subcoordinador', photo: 'assets/team/sebastian.jpg' },
-        { name: 'Iván Velázquez', role: 'Subcoordinador', photo: 'assets/team/ivan.jpg' },
-        { name: 'Luis Martínez', role: 'Subcoordinador', photo: 'assets/team/luis.jpg' }
+        { name: 'XIMENA ORTIZ', role: 'Coordinadora General', photo: ''},
+        { name: 'EDGAR RAMIREZ', role: 'Coordinador General', photo: '' },
+        { name: 'LUIS MARTÍNEZ', role: 'Coordinador General', photo: '' },
       ]
     },
     {
-      title: 'Aspirantes',
+      title: 'SUBCOORDINADORES',
       members: [
-        { name: 'Edgar Ramírez', role: 'Aspirante' },
-        { name: 'Enrique Soto', role: 'Aspirante' },
-        { name: 'David Martínez', role: 'Aspirante' },
-        { name: 'Shelly Aguilar', role: 'Aspirante' },
-        { name: 'Jeanette Murillo', role: 'Aspirante' },
-        { name: 'Kevin Martínez', role: 'Aspirante' }
+        { name: 'ENRIQUE SOTO', role: 'Subcoordinador' },
+        { name: 'SHELLY AGUILAR', role: 'Subcoordinadora' },
+        { name: 'SHARON AGUILAR', role: 'Subcoordinadora' },
+        { name: 'RODRIGO BARRERA', role: 'Subcoordinador' },
+        { name: 'IVÁN MONTES', role: 'Subcoordinador' },
+      ]
+    },
+    {
+      title: 'COLABORADORES',
+      members: [
+        { name: 'MARTÍN LOPEZ', role: 'Colaborador' },
+        { name: 'ARTURO HURTADO', role: 'Colaborador' },
+        { name: 'JEANETTE MURILLO', role: 'Colaborador' },
+        { name: 'ERIKA ORTEGA', role: 'Colaborador' },
+        { name: 'MELANIE ACOSTA', role: 'Colaborador' },
+        { name: 'YULIANA ACOSTA', role: 'Colaborador' }
+      ]
+    },
+    {
+      title: 'AMIGOS DE LA FUNDACIÓN',
+      members: [
+        { name: 'JUAN SOTELO', role: 'Amigo' },
+        { name: 'ADRIÁN GARCIA', role: 'Amigo' },
+        { name: 'MIGUEL JUÁREZ', role: 'Amigo' }
       ]
     }
   ];
@@ -104,5 +125,17 @@ export class About{
 
   getSecretaries(section: TeamSection): TeamMember[] {
     return section.members.filter(m => /secretario/i.test(m.role));
+  }
+
+  getTopDir(section: TeamSection): TeamMember[] {
+    return section.members.filter(m => /\bDirector General\b/i.test(m.role));
+  }
+
+  getCoordinationGeneral(section: TeamSection): TeamMember[] {
+    return section.members.filter(m => /\bCoordinador/i.test(m.role));
+  }
+
+  getSubCoordination(section: TeamSection): TeamMember[] {
+    return section.members.filter(m => /\bSubcoordinador/i.test(m.role));
   }
 }
