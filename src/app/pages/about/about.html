@@ -2,7 +2,199 @@
   <div class="row align-items-center">
     <div class="col">
       <h1>CONOCE A NUESTRO EQUIPO</h1>
-      <p class="lead text-white mt-4">Somos la Fundación Adrián Parra y trabajamos para transformar vidas con proyectos sociales y de salud.</p>
+      <p class="lead text-white mt-4">
+        Somos la Fundación Adrián Parra y trabajamos para transformar vidas
+        con proyectos sociales y de salud.
+      </p>
     </div>
   </div>
 </section>
+
+@for (section of teamSections; track section.title) {
+  <section class="container py-5">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="text-white">{{ section.title }}</h2>
+        <hr class="w-25 mx-auto">
+      </div>
+    </div>
+
+    <!-- Pirámide para Mesa Directiva -->
+     @if (section.title === 'MESA DIRECTIVA DE LA FUNDACIÓN') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getTop(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="pyramid-row pyramid-vice">
+          @for (m of getVice(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="pyramid-row pyramid-treasurers">
+          @for (m of getTreasurers(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="pyramid-row pyramid-secretaries">
+          @for (m of getSecretaries(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+
+     <!-- Pirámide para Dirección y Coordinación -->
+     @if (section.title === 'DIRECCIÓN Y COORDINACIÓN GENERAL DEL LABORATORIO DE LA FUNDACIÓN') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getTopDir(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+
+     <!-- Pirámide para Dirección General -->
+     @if (section.title === 'COORDINACIÓN GENERAL') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getCoordinationGeneral(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+
+      <!-- Pirámide para Subcoordinación -->
+     @if (section.title === 'SUBCOORDINADORES') {
+      <div class="pyramid-container">
+        <div class="pyramid-row pyramid-top">
+          @for (m of getSubCoordination(section); track m.name) {
+            <div class="pyramid-cell">
+              <div class="card h-100 shadow-sm text-center" (click)="openMemberModal(m)" data-bs-toggle="modal" data-bs-target="#memberModal">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.name }}</h5>
+                  <p class="card-text">{{ m.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+     }
+    
+
+   
+  </section>
+}
+
+<div
+  class="modal fade"
+  id="memberModal"
+  tabindex="-1"
+  aria-labelledby="memberModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content bg-dark text-white">
+
+      <div class="modal-header border-secondary">
+
+        <h5
+          class="modal-title"
+          id="memberModalLabel">
+
+          {{ selectedMember?.name }}
+
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal">
+        </button> 
+
+      </div>
+
+      <div class="modal-body">
+
+        @if (selectedMember?.photo) {
+          <div class="text-center mb-3">
+            <img
+              [src]="selectedMember?.photo"
+              [alt]="selectedMember?.name"
+              class="img-fluid rounded"
+              style="max-height: 250px;">
+          </div>
+        }
+
+        <h6 class="text-secondary">
+          {{ selectedMember?.role }}
+        </h6>
+
+        <p>
+          {{ selectedMember?.description }}
+        </p>
+
+      </div>
+
+      <div class="modal-footer border-secondary">
+
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

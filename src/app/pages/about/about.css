@@ -1,0 +1,29 @@
+.card {
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Pyramid layout */
+.pyramid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.pyramid-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.pyramid-top .pyramid-cell { flex: 0 0 30%; max-width: 15rem; }
+.pyramid-vice .pyramid-cell { flex: 0 0 25%; max-width: 18rem; }
+.pyramid-treasurers .pyramid-cell { flex: 0 0 18%; max-width: 15rem; }
+.pyramid-secretaries .pyramid-cell { flex: 0 0 15%; max-width: 15rem; }
+.pyramid-cell .card { background: #252525; color: #fff; }
+.pyramid-cell .card .card-body { padding: 1rem; }

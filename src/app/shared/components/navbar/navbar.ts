@@ -20,6 +20,11 @@ export class Navbar {
     { label: 'Contacto', route: '/contact' }
   ];
 
+  diaMuertosEdicionItems: NavbarItem[] = [
+    { label: 'XII Edición', route: '/dia-muertos-2024' },
+    { label: 'XIII Edición', route: '/dia-muertos-2025' }
+  ];
+
   laboratorioItems: NavbarItem[] = [
     { label: 'CDMX', route: '/lab-cdmx' }
   ];
