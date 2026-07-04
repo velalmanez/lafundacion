@@ -1,0 +1,111 @@
+{
+  "sections": [
+    {
+      "title": "Mesa Directiva",
+      "members": [
+        {
+          "name": "Rahmar Villegas",
+          "role": "Presidente",
+          "photo": "assets/team/rahmar.jpg",
+          "description": "Rahmar es un apasionado por la educación y el desarrollo comunitario. Con una amplia experiencia en liderazgo, ha dedicado su vida a impulsar proyectos que transformen vidas y generen un impacto positivo en la sociedad."
+        },
+        {
+          "name": "Guillermo Ortiz",
+          "role": "Tesorero",
+          "photo": "assets/team/guillermo.jpg",
+          "description": "Guillermo es un experto en finanzas con una sólida trayectoria en la gestión de recursos. Su compromiso con la transparencia y la eficiencia ha sido fundamental para garantizar el buen uso de los fondos de la fundación."
+        },
+        {
+          "name": "Carmen Parra",
+          "role": "Tesorera",
+          "photo": "assets/team/carmen.jpg",
+          "description": "Carmen es una profesional dedicada a la contabilidad y la administración. Su enfoque meticuloso y su pasión por el trabajo comunitario han sido clave para mantener la estabilidad financiera de la fundación."
+        },
+        {
+          "name": "Gilberto Parra",
+          "role": "Secretario General",
+          "photo": "assets/team/gilberto.jpg"
+        },
+        {
+          "name": "Vic Parra",
+          "role": "Secretario General",
+          "photo": "assets/team/vic.jpg"
+        },
+        {
+          "name": "Patricia Silva",
+          "role": "Secretaria General",
+          "photo": "assets/team/patricia.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Dirección y Coordinación General",
+      "members": [
+        {
+          "name": "Rahmar Villegas",
+          "role": "Director General",
+          "photo": "assets/team/rahmar.jpg"
+        },
+        {
+          "name": "Ximena Ortiz",
+          "role": "Coordinadora General",
+          "photo": "assets/team/ximena.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Subcoordinadores",
+      "members": [
+        {
+          "name": "Patricia Silva",
+          "role": "Subcoordinadora",
+          "photo": "assets/team/patricia.jpg"
+        },
+        {
+          "name": "Sebastián Soto",
+          "role": "Subcoordinador",
+          "photo": "assets/team/sebastian.jpg"
+        },
+        {
+          "name": "Iván Velázquez",
+          "role": "Subcoordinador",
+          "photo": "assets/team/ivan.jpg"
+        },
+        {
+          "name": "Luis Martínez",
+          "role": "Subcoordinador",
+          "photo": "assets/team/luis.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Aspirantes",
+      "members": [
+        {
+          "name": "Edgar Ramírez",
+          "role": "Aspirante"
+        },
+        {
+          "name": "Enrique Soto",
+          "role": "Aspirante"
+        },
+        {
+          "name": "David Martínez",
+          "role": "Aspirante"
+        },
+        {
+          "name": "Shelly Aguilar",
+          "role": "Aspirante"
+        },
+        {
+          "name": "Jeanette Murillo",
+          "role": "Aspirante"
+        },
+        {
+          "name": "Kevin Martínez",
+          "role": "Aspirante"
+        }
+      ]
+    }
+  ]
+}
